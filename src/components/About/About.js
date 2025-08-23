@@ -5,7 +5,6 @@ import Aboutcard from "./AboutCard";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
 import KeySkills from "./KeySkills";
-import laptopImg from "../../Assets/about.png";
 
 function About() {
   return (
@@ -27,11 +26,11 @@ function About() {
           </Col>
         </Row>
 
+        <KeySkills />
+
         <Education />
 
         <WorkExperience />
-
-        <KeySkills />
       </Container>
     </Container>
   );

@@ -5,18 +5,14 @@ html {
     rgba(12, 8, 24, 0.904)
   );
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
-
   --imp-text-color: #c770f0;
   scroll-behavior: smooth;
 }
 
 /* Add scroll offset for fixed navbar */
 #about,
+#education,
+#work-experience,
 #projects,
 #resume {
   scroll-margin-top: 80px;
@@ -91,7 +87,6 @@ button:focus {
 }
 
 .navbar {
-  /* position: fixed !important; */
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
@@ -273,7 +268,6 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
@@ -284,7 +278,6 @@ button:focus {
   .home-section {
     position: relative;
     z-index: -1;
-    /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */
     background-position: top center;
     background-repeat: no-repeat;
     padding-bottom: 30px !important;
@@ -484,16 +477,15 @@ button:focus {
 /* Projects */
 /* --------- */
 .project-section {
-  z-index: -1;
+  z-index: 1;
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  /* background-image: var(--section-background-color) !important; */
 }
 
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
   height: auto !important;
@@ -502,15 +494,84 @@ button:focus {
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
   color: white !important;
-  background-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 15px !important;
   opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
+  transition: all 0.3s ease 0s !important;
   height: 100% !important;
-}
-.project-card-view:hover {
-  transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+}
+
+.project-card-view:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(129, 72, 144, 0.4) !important;
+  opacity: 1 !important;
+}
+
+.project-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  height: 200px;
+}
+
+.project-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.3s ease !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.project-card-view:hover .project-img {
+  transform: scale(1.05) !important;
+}
+
+.project-card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  height: calc(100% - 200px) !important;
+  padding: 20px !important;
+}
+
+.project-title {
+  font-size: 1.3em !important;
+  font-weight: 600 !important;
+  color: var(--imp-text-color) !important;
+  margin-bottom: 15px !important;
+  line-height: 1.3 !important;
+}
+
+.project-description {
+  text-align: justify !important;
+  flex: 1 !important;
+  font-size: 0.95em !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-bottom: 20px !important;
+}
+
+.project-buttons {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: auto !important;
+}
+
+.project-btn {
+  flex: 1 !important;
+  padding: 8px 15px !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.9em !important;
 }
 
 .blog-card {
@@ -550,6 +611,36 @@ button:focus {
   border-radius: 10px !important;
 }
 
+/* Project card responsive design */
+@media (max-width: 767px) {
+  .project-card {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  .project-buttons {
+    flex-direction: column !important;
+  }
+  
+  .project-btn {
+    margin-bottom: 8px !important;
+  }
+  
+  .project-img-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-img-container {
+    height: 160px;
+  }
+  
+  .project-card-body {
+    padding: 15px !important;
+  }
+}
+
 .blog-img {
   padding: 0px !important;
   opacity: 0.8 !important;
@@ -586,7 +677,6 @@ button:focus {
   position: relative !important;
   padding-top: 90px !important;
   padding-bottom: 30px !important;
-  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 
@@ -647,7 +737,6 @@ button:focus {
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 
@@ -988,7 +1077,7 @@ button:focus {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, #00d4aa, #ff6b6b, #4ecdc4, #a55eea);
+  background: linear-gradient(#007bff, #00d4aa, #6a5acd);
   border-radius: 3px;
 }
 
@@ -1053,6 +1142,7 @@ button:focus {
   font-weight: 600;
   margin: 0 0 4px 0;
   line-height: 1.3;
+  text-align: left;
 }
 
 .work-company {
@@ -1061,6 +1151,7 @@ button:focus {
   font-weight: 500;
   margin: 0;
   opacity: 0.9;
+  text-align: left;
 }
 
 .work-meta {
@@ -1092,6 +1183,7 @@ button:focus {
   line-height: 1.5;
   margin: 12px 0 15px 0;
   font-size: 0.9em;
+  text-align: left;
 }
 
 .work-technologies h5 {
@@ -1105,6 +1197,8 @@ button:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  justify-content: center;
+  text-align: center;
 }
 
 .tech-tag {
@@ -1285,8 +1379,8 @@ button:focus {
 }
 
 /* Mobile responsive for compact skills layout */
-@media screen and (max-width: 1199px) {
-  .skills-category-row .col-xl-3 {
+@media screen and (max-width: 1399px) {
+  .skills-category-row .col-xl-4 {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -1335,8 +1429,82 @@ button:focus {
     padding: 1px 4px;
   }
   
-  .skills-category-row .col-xl-3 {
+  .skills-category-row .col-xl-4 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+}
+
+/* Image Modal Styles */
+.image-modal {
+  background-color: #181a27;
+}
+
+.image-modal .modal-content {
+  background-color: var(--section-background-color) !important;
+  border: 2px solid var(--imp-text-color) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.image-modal-header {
+  background-color: var(--nav-color) !important;
+  border-bottom: 1px solid var(--imp-text-color) !important;
+  border-radius: 15px 15px 0 0 !important;
+  padding: 15px 20px !important;
+}
+
+.image-modal-title {
+  color: var(--imp-text-color) !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.image-modal .btn-close {
+  opacity: 0.8 !important;
+  filter: invert(1) !important;
+}
+
+.image-modal .btn-close:hover {
+  opacity: 1 !important;
+}
+
+.image-modal-body {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: var(--section-background-color) !important;
+  border-radius: 0 0 15px 15px !important;
+}
+
+.modal-project-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 60vh !important;
+  object-fit: contain !important;
+  border-radius: 0 0 15px 15px !important;
+}
+
+.clickable-img:hover {
+  opacity: 0.8 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* Responsive modal styles */
+@media (max-width: 768px) {
+  .image-modal .modal-dialog {
+    max-width: 100vw !important;
+    border-radius: 15px !important;
+    background-color: #181a27;
+  }
+  
+  .image-modal-body {
+    padding: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: var(--section-background-color) !important;
+    border-radius: 0 0 15px 15px !important;
   }
 }

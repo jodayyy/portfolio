@@ -6,36 +6,36 @@ function Education() {
   const educationData = [
     {
       id: 1,
-      degree: "Bachelor of Computer Science",
-      institution: "Universiti Malaysia Sarawak (UNIMAS)",
+      degree: "Bachelor of Computer Science (Hons.)",
+      institution: "Universiti Teknologi MARA (UiTM)",
       duration: "2020 - 2024",
-      description: "Specialized in Software Engineering and Data Structures. Graduated with First Class Honours. Final year project focused on web application development using modern frameworks.",
+      description: "Bachelor's program focused on software engineering, artificial intelligence, and data science. Covered programming, databases, operating systems, algorithms, computer security, and included practical experience through a 14-week industrial attachment and a final-year project.",
       icon: <FaGraduationCap />,
-      gpa: "CGPA: 3.75/4.00"
+      gpa: "CGPA: 3.30"
     },
     {
       id: 2,
-      degree: "Foundation in Science",
-      institution: "Universiti Malaysia Sarawak (UNIMAS)",
+      degree: "Diploma in Computer Science",
+      institution: "Universiti Teknologi MARA (UiTM)",
       duration: "2019 - 2020",
-      description: "Foundation program covering Mathematics, Physics, Chemistry, and Computer Science fundamentals. Achieved Dean's List recognition for academic excellence.",
+      description: "Diploma program covering programming, data structures, databases, operating systems, web and mobile development, and networking. Included mathematics, entrepreneurship, Islamic studies, and hands-on experience through an industrial attachment.",
       icon: <FaUniversity />,
-      gpa: "CGPA: 3.85/4.00"
+      gpa: "CGPA: 3.35"
     },
     {
       id: 3,
       degree: "Sijil Pelajaran Malaysia (SPM)",
-      institution: "SMK Kuching High School",
+      institution: "SMK Tun Abang Haji Openg",
       duration: "2014 - 2018",
-      description: "Completed secondary education with focus on Science stream. Active participant in Mathematics and Computer Science competitions at state level.",
+      description: "Completed secondary education in the literature stream, focusing on core subjects such as Bahasa Melayu, English, Mathematics, and History, alongside elective subjects. Developed foundational skills in critical thinking, communication, and problem-solving, achieving a balanced academic performance.",
       icon: <FaSchool />,
-      gpa: "Grade: 8A+ 2A"
+      gpa: "Grade: 4A 4B 1C"
     }
   ];
 
   return (
-    <Container>
-      <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Container id="education">
+      <Row style={{ justifyContent: "center", paddingBottom: "50px", paddingTop: "100px" }}>
         <Col md={12}>
           <h1 className="project-heading" style={{ marginBottom: "50px" }}>
             My <strong className="purple">Educational Journey</strong>

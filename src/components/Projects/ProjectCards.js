@@ -1,40 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { BsGithub, BsEyeFill } from "react-icons/bs";
+
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import Modal from "react-bootstrap/Modal";
 
 function ProjectCards(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleImageClick = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+    <>
+      <Card className="project-card-view">
+        <div className="project-img-container">
+          <Card.Img 
+            variant="top" 
+            src={props.imgPath} 
+            alt="card-img" 
+            className="project-img clickable-img" 
+            onClick={handleImageClick}
+            style={{ cursor: 'pointer' }}
+          />
+        </div>
+      <Card.Body className="project-card-body">
+        <Card.Title className="project-title">{props.title}</Card.Title>
+        <Card.Text className="project-description">
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
+        <div className="project-buttons">
+          {props.ghLink && (
+            <Button
+              variant="primary"
+              href={props.ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn"
+            >
+              <BsGithub /> &nbsp;
+              GitHub
+            </Button>
+          )}
+          {props.demoLink && (
+            <Button
+              variant="primary"
+              href={props.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn"
+            >
+              <BsEyeFill /> &nbsp;
+              Demo
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
+
+    {/* Image Modal Popup */}
+    <Modal 
+      show={showModal} 
+      onHide={handleCloseModal} 
+      centered 
+      size="lg"
+      className="image-modal"
+    >
+      <Modal.Header closeButton className="image-modal-header">
+        <Modal.Title className="image-modal-title">{props.title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="image-modal-body">
+        <img 
+          src={props.imgPath} 
+          alt={props.title}
+          className="modal-project-img"
+        />
+      </Modal.Body>
+    </Modal>
+  </>
   );
 }
+
 export default ProjectCards;

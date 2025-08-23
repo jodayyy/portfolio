@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
-import Button from "react-bootstrap/Button";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
-  AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
+import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
@@ -45,9 +40,6 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        {/* <Navbar.Brand href="#home" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -69,6 +61,18 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link href="#about" onClick={() => scrollToSection('about')}>
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link href="#education" onClick={() => scrollToSection('education')}>
+                <FaGraduationCap style={{ marginBottom: "2px" }} /> Education
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link href="#work-experience" onClick={() => scrollToSection('work-experience')}>
+                <FaBriefcase style={{ marginBottom: "2px" }} /> Work
               </Nav.Link>
             </Nav.Item>
 

@@ -1,13 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import SC2T from "../../Assets/Projects/SC2T-User-Train.png";
+import SimpanNow from "../../Assets/Projects/SimpanNow.png";
+import SER from "../../Assets/Projects/SER.png";
+import FAT from "../../Assets/Projects/FAT.png";
+import BDVA from "../../Assets/Projects/BDVA.png";
+import Questio from "../../Assets/Projects/Questio.png";
 
 function Projects() {
   return (
@@ -15,76 +16,63 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent<strong className="purple"> Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here are a few projects I've worked on.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              imgPath={SC2T}
+              title="StarCraft 2 Training System"
+              description="A web-based application for StarCraft 2 players to train and improve their gameplay by competing against an AI developed for this system. Features include performance tracking, gameplay analysis, and strategy enhancement through repeated practice."
+              ghLink="https://github.com/jodayyy/StarCraft-2-Training-System-SC2T"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              imgPath={SER}
+              title="Speech Emotion Recognition"
+              description="My final year project during my bachelor's degree. A deep learning-based project for recognizing emotions from speech. A Flask web application for real-time and file-based emotion recognition using pre-trained models. Supports Neutral, Happy, Sad, and Angry emotions."
+              ghLink="https://github.com/jodayyy/Speech-Emotion-Recognition-SER"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              imgPath={FAT}
+              title="Frequency Analysis Tool"
+              description="A Python-based tool for frequency analysis and decryption of simple substitution ciphers. Features include single character, digram, and trigram analysis, as well as Caesar cipher decryption. Developed as part of an assignment, this tool was the only functional program in the class."
+              ghLink="https://github.com/jodayyy/Frequency-Analysis-Tool"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              imgPath={BDVA}
+              title="Blood Donor View App"
+              description="A foundational Android application developed as a freelance project for managing and viewing blood donor and donation event data. Features include donor profile management, donation event tracking, and an interactive calendar. Built with Room database for offline storage, with potential for online database integration and role-based access."
+              ghLink="https://github.com/jodayyy/Blood-Donor-View-App"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              imgPath={SimpanNow}
+              title="SimpanNow"
+              description="A simple and intuitive personal finance management app built with Flutter and Firebase. Features include transaction management, account handling, financial summaries, historical trends, and responsive design for web and mobile platforms."
+              ghLink="https://github.com/jodayyy/simpannow"
+              demoLink="https://simpannow.web.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              imgPath={Questio}
+              title="Questio (Ongoing)"
+              description="My next project would be a web application designed to help users create and manage tasks while incorporating a self-reward system. Users can assign rewards to tasks for motivation and productivity."
             />
           </Col>
         </Row>

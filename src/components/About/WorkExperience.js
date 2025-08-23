@@ -1,59 +1,48 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaBriefcase, FaCode, FaLaptopCode, FaUsers } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa";
 import { MdWork, MdBusinessCenter } from "react-icons/md";
 
 function WorkExperience() {
   const workData = [
     {
       id: 1,
-      position: "Full Stack Developer",
-      company: "TechSolutions Malaysia",
-      duration: "Jan 2024 - Present",
+      position: "Front-End Developer",
+      company: "Infollective Solutions Sdn. Bhd.",
+      duration: "Jan 2025 - Present",
       type: "Full-time",
-      description: "Developing and maintaining web applications using React.js, Node.js, and MongoDB. Collaborated with cross-functional teams to deliver high-quality software solutions for clients in various industries.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "AWS"],
+      description: "Developed and maintained scalable, modular front-end features using Next.js, React, and TypeScript for a complex ERP system. Implemented dynamic forms, role-based access control, and reusable UI components, enhancing maintainability and reducing development time for new features by 30%. Collaborated cross-functionally with backend, QA, and product teams to translate business requirements into responsive, accessible UIs with optimized performance and SEO using server-side rendering and API integration.",
+      technologies: ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS"],
       icon: <FaLaptopCode />,
-      color: "#00d4aa"
+      color: "#007bff"
     },
     {
       id: 2,
-      position: "Software Engineering Intern",
-      company: "Digital Innovations Sdn Bhd",
-      duration: "Jun 2023 - Dec 2023",
+      position: "Repayment Section Intern",
+      company: "Yayasan Sarawak",
+      duration: "Mar 2024 - Jun 2024",
       type: "Internship",
-      description: "Assisted in developing mobile applications using React Native. Participated in code reviews, testing, and debugging processes. Gained experience in agile development methodologies.",
-      technologies: ["React Native", "JavaScript", "Firebase", "Git"],
-      icon: <FaCode />,
-      color: "#ff6b6b"
+      description: "Assisted in repayment operations, including generating and managing repayment notices. Automated the processing of repayment letters by developing an app to scan and transfer data into Google Sheets. Provided support in streamlining workflows for the repayment section.",
+      technologies: ["Android Studio", "Kotlin", "Google Sheets API"],
+      icon: <MdBusinessCenter />,
+      color: "#00d4aa"
     },
     {
       id: 3,
-      position: "Web Development Freelancer",
-      company: "Self-Employed",
-      duration: "Mar 2022 - May 2023",
-      type: "Freelance",
-      description: "Created custom websites for local businesses and startups. Specialized in responsive design and e-commerce solutions. Managed client relationships and project timelines independently.",
-      technologies: ["HTML/CSS", "JavaScript", "WordPress", "PHP"],
-      icon: <FaBriefcase />,
-      color: "#4ecdc4"
-    },
-    {
-      id: 4,
-      position: "IT Support Assistant",
-      company: "UNIMAS Computer Center",
+      position: "I.T Department Intern",
+      company: "Pustaka Negeri Sarawak",
       duration: "Sep 2021 - Feb 2022",
-      type: "Part-time",
-      description: "Provided technical support to students and faculty. Maintained computer labs and assisted with network troubleshooting. Developed communication skills through customer service interactions.",
-      technologies: ["Windows Server", "Network Administration", "Hardware Maintenance"],
+      type: "Internship",
+      description: "Assisted with IT operations, including software installation and troubleshooting technical issues for staff. Developed an online system for generating certificates for event participants, reducing manual workload. Supported the maintenance of IT infrastructure and provided solutions to daily technical challenges.",
+      technologies: ["HTML/CSS", "JavaScript", "PHP", "MySQL"],
       icon: <MdWork />,
-      color: "#a55eea"
+      color: "#6a5acd"
     }
   ];
 
   return (
-    <Container>
-      <Row style={{ justifyContent: "center", paddingBottom: "50px", paddingTop: "50px" }}>
+    <Container id="work-experience">
+      <Row style={{ justifyContent: "center", paddingTop: "100px" }}>
         <Col md={12}>
           <h1 className="project-heading" style={{ marginBottom: "50px" }}>
             Professional <strong className="purple">Experience</strong>
